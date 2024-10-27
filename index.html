@@ -57,6 +57,22 @@
       rel="stylesheet"
       href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
     />
+
+    <script>
+    // Function to calculate and update the paragraph
+    function calculateAndUpdate() {
+      // Get the values from the input fields
+      const priority = parseFloat(document.getElementById('Pr').value) || 0; // Priority
+      const prioritiesFilled = parseFloat(document.getElementById('Pf').value) || 0; // Priorities Filled Today
+      const goalPercentage = parseFloat(document.getElementById('Pp').value) || 0; // % Goal
+
+      // Calculate the total
+      const total = (priority + prioritiesFilled) - ((priority + prioritiesFilled) * goalPercentage);
+
+      // Update the <p> element with the calculated total
+      document.getElementById('Pn').innerHTML = `<span class="home-text22 thq-body-large">${total}</span>`;
+    }
+  </script>
   </head>
   <body>
     <link rel="stylesheet" href="./style.css" />
