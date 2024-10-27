@@ -68,7 +68,7 @@
 
       
       const total = (priority + prioritiesFilled);
-      const needed = prioritiesFilled - (total * 0.75);
+      const needed = (total * goalPercentage) - prioritiesFilled;
       document.getElementById('Pn').innerHTML = `<span class="home-text22 thq-body-large">${needed}</span>`;
     }
   </script>
