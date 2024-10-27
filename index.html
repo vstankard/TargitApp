@@ -68,7 +68,7 @@
 
       
       const total = (priority + prioritiesFilled);
-      const needed = Math.ceil((total * goalPercentage)-prioritiesFilled);
+      const needed = Math.max(0, Math.ceil((total * goalPercentage) - prioritiesFilled));
       document.getElementById('Pn').innerHTML = `<span class="home-text22 thq-body-large">${needed}</span>`;
     }
   </script>
