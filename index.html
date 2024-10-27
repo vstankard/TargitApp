@@ -62,13 +62,14 @@
     
     function calculateAndUpdate() {
      
-      const priority = parseFloat(document.getElementById('Pr').value) || 0; // Priority
-      const prioritiesFilled = parseFloat(document.getElementById('Pf').value) || 0; // Priorities Filled Today
-      const goalPercentage = parseFloat(document.getElementById('Pp').value) || 0; // % Goal
+      const priority = parseFloat(document.getElementById('Pr').value) || 0;
+      const prioritiesFilled = parseFloat(document.getElementById('Pf').value) || 0; 
+      const goalPercentage = parseFloat(document.getElementById('Pp').value) || 0;
 
       
-      const total = (priority + prioritiesFilled) - ((priority + prioritiesFilled) * goalPercentage);
-      document.getElementById('Pn').innerHTML = `<span class="home-text22 thq-body-large">${total}</span>`;
+      const total = (priority + prioritiesFilled);
+      const needed = prioritiesFilled - (total * 0.75);
+      document.getElementById('Pn').innerHTML = `<span class="home-text22 thq-body-large">${needed}</span>`;
     }
   </script>
   </head>
