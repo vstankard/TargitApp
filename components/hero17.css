@@ -12,7 +12,7 @@
 .hero17-column1 {
   gap: var(--dl-space-space-oneandhalfunits);
   width: auto;
-  height: 89px;
+  height: auto;
   display: flex;
   align-self: center;
   align-items: center;
