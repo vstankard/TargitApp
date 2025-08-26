@@ -663,3 +663,17 @@
   font-family: "Noto Sans";
   font-weight: 900;
 }
+
+.navbar8-desktop-menu {
+  display: flex;
+  gap: 2rem; /* controls space between items */
+  justify-content: flex-end; /* or center if you prefer */
+  align-items: center;
+}
+
+.navbar8-desktop-menu a {
+  width: auto;          /* remove the stretching */
+  padding: 0.5rem 1rem; /* make them look like buttons if you want */
+  text-decoration: none;
+  color: inherit;
+}
