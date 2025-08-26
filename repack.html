@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Repack Calculator</title>
+    <meta property="og:title" content="Repack Calculator" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <script>
+      function calculateRepack() {
+        const casePacks = parseFloat(document.getElementById('cases').value) || 0;
+        const repacks = parseFloat(document.getElementById('repack').value) || 0;
+
+        const result = (casePacks + repacks) / 20;
+
+        document.getElementById('result').innerHTML = 
+          `<span class="home-text22 thq-body-large">${result.toFixed(2)}</span>`;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="home-container">
+      <!-- Navbar -->
+      <header class="navbar8-container1">
+        <header data-thq="thq-navbar" class="navbar8-navbar-interactive">
+          <img alt="Company Logo" src="public/targit-1500h.png" class="navbar8-image1" />
+          <nav class="navbar8-desktop-menu">
+            <a href="index.html" class="navbar8-menu-item1">
+              <span class="home-text11">Priority Calculator</span>
+            </a>
+            <a href="repack.html" class="navbar8-menu-item2">
+              <span class="home-text12">Repack Calculator</span>
+            </a>
+          </nav>
+        </header>
+      </header>
+
+      <!-- Hero Section -->
+      <div class="hero17-header78">
+        <div class="hero17-column1 thq-section-padding thq-section-max-width">
+          <h1>
+            <span class="home-text26 thq-heading-1">
+              Repack Calculator
+            </span>
+          </h1>
+          <p class="home-text24 thq-body-large">
+            Enter case packs and repacks to calculate the result.
+          </p>
+        </div>
+
+        <!-- Inputs -->
+        <div class="hero17-container1">
+          <div class="hero17-container2">
+            <label><span class="home-text19">Enter Case Packs:</span></label>
+            <input type="number" id="cases" placeholder="Case Packs" class="input" />
+          </div>
+          <div class="hero17-container3">
+            <label><span class="home-text20">Enter Repacks:</span></label>
+            <input type="number" id="repack" placeholder="Repacks" class="input" />
+          </div>
+        </div>
+
+        <!-- Button -->
+        <button type="button" onclick="calculateRepack()" class="hero17-button button">
+          <span class="home-text21">Calculate</span>
+        </button>
+
+        <!-- Result -->
+        <div class="hero17-column2 thq-section-padding thq-section-max-width">
+          <h1>
+            <span class="home-text23 thq-heading-1">Result:&nbsp;</span>
+          </h1>
+          <p id="result">
+            <span class="home-text22 thq-body-large">?</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer4-footer7 thq-section-padding">
+        <div class="footer4-max-width thq-section-max-width">
+          <div class="footer4-content">
+            <div class="footer4-logo1">
+              <img alt="Company Logo" src="public/targit-1500h.png" class="footer4-logo2" />
+            </div>
+          </div>
+          <div class="footer4-credits">
+            <div class="thq-divider-horizontal"></div>
+            <div class="footer4-row">
+              <div class="footer4-container">
+                <span class="thq-body-small">© 2024 Vincent - Any Likeness to Any Brand is Purely Coincidental</span>
+              </div>
+              <div class="footer4-footer-links"></div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
