@@ -62,13 +62,10 @@
     
     function calculateAndUpdate() {
      
-      const priority = parseFloat(document.getElementById('Pr').value) || 0;
-      const prioritiesFilled = parseFloat(document.getElementById('Pf').value) || 0; 
-      const goalPercentage = parseFloat(document.getElementById('Pp').value) || 0;
+      const casePacks = parseFloat(document.getElementById('cases').value) || 0;
+        const repacks = parseFloat(document.getElementById('repack').value) || 0;
 
-      
-      const total = (priority + prioritiesFilled);
-      const needed = Math.max(0, Math.ceil((total * goalPercentage) - prioritiesFilled));
+        const needed = (casePacks + repacks) / 20;
       document.getElementById('Pn').innerHTML = `<span class="home-text22 thq-body-large">${needed}</span>`;
     }
   </script>
@@ -149,7 +146,7 @@
               <h1>
                 <fragment class="home-fragment23">
                   <span class="home-text23 thq-heading-1">
-                    You Need To Pull:&nbsp;
+                    You Need:
                   </span>
                 </fragment>
               </h1>
@@ -162,7 +159,7 @@
               </div>
               <p>
                 <fragment class="home-fragment25">
-                  <span class="home-text25 thq-body-large">Priorities!</span>
+                  <span class="home-text25 thq-body-large">Packs!</span>
                 </fragment>
               </p>
             </div>
