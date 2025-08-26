@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Priority Calculator</title>
-    <meta property="og:title" content="Priority Calculator" />
+    <title>Repack Calculator</title>
+    <meta property="og:title" content="Repack Calculator" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -59,94 +59,180 @@
     />
 
     <script>
-      function calculateRepack() {
-        const casePacks = parseFloat(document.getElementById('cases').value) || 0;
-        const repacks = parseFloat(document.getElementById('repack').value) || 0;
+    
+    function calculateAndUpdate() {
+     
+      const priority = parseFloat(document.getElementById('Pr').value) || 0;
+      const prioritiesFilled = parseFloat(document.getElementById('Pf').value) || 0; 
+      const goalPercentage = parseFloat(document.getElementById('Pp').value) || 0;
 
-        const result = (casePacks + repacks) / 20;
-
-        document.getElementById('result').innerHTML = 
-          `<span class="home-text22 thq-body-large">${result.toFixed(2)}</span>`;
-      }
-    </script>
+      
+      const total = (priority + prioritiesFilled);
+      const needed = Math.max(0, Math.ceil((total * goalPercentage) - prioritiesFilled));
+      document.getElementById('Pn').innerHTML = `<span class="home-text22 thq-body-large">${needed}</span>`;
+    }
+  </script>
   </head>
   <body>
-    <div class="home-container">
-      <!-- Navbar -->
-      <header class="navbar8-container1">
-        <header data-thq="thq-navbar" class="navbar8-navbar-interactive">
-          <img alt="Company Logo" src="public/targit-1500h.png" class="navbar8-image1" />
-          <nav class="navbar8-desktop-menu">
-            <a href="index.html" class="navbar8-menu-item1">
-              <span class="home-text11">Priority Calculator</span>
-            </a>
-            <a href="repack.html" class="navbar8-menu-item2">
-              <span class="home-text12">Repack Calculator</span>
-            </a>
-          </nav>
-        </header>
-      </header>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
 
-      <!-- Hero Section -->
-      <div class="hero17-header78">
-        <div class="hero17-column1 thq-section-padding thq-section-max-width">
-          <h1>
-            <span class="home-text26 thq-heading-1">
-              Repack Calculator
-            </span>
-          </h1>
-          <p class="home-text24 thq-body-large">
-            Enter case packs and repacks to calculate the result.
-          </p>
-        </div>
+      <div class="home-container">
+        <navbar8-wrapper class="navbar8-wrapper">
+          <!--Navbar8 component-->
+          <header class="navbar8-container1">
+            <header data-thq="thq-navbar" class="navbar8-navbar-interactive">
+  <img
+    alt="Company Logo"
+    src="public/targit-1500h.png"
+    class="navbar8-image1"
+  />
 
-        <!-- Inputs -->
-        <div class="hero17-container1">
-          <div class="hero17-container2">
-            <label><span class="home-text19">Enter Case Packs:</span></label>
-            <input type="number" id="cases" placeholder="Case Packs" class="input" />
-          </div>
-          <div class="hero17-container3">
-            <label><span class="home-text20">Enter Repacks:</span></label>
-            <input type="number" id="repack" placeholder="Repacks" class="input" />
-          </div>
-        </div>
-
-        <!-- Button -->
-        <button type="button" onclick="calculateRepack()" class="hero17-button button">
-          <span class="home-text21">Calculate</span>
-        </button>
-
-        <!-- Result -->
-        <div class="hero17-column2 thq-section-padding thq-section-max-width">
-          <h1>
-            <span class="home-text23 thq-heading-1">Result:&nbsp;</span>
-          </h1>
-          <p id="result">
-            <span class="home-text22 thq-body-large">?</span>
-          </p>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <footer class="footer4-footer7 thq-section-padding">
-        <div class="footer4-max-width thq-section-max-width">
-          <div class="footer4-content">
-            <div class="footer4-logo1">
-              <img alt="Company Logo" src="public/targit-1500h.png" class="footer4-logo2" />
-            </div>
-          </div>
-          <div class="footer4-credits">
-            <div class="thq-divider-horizontal"></div>
-            <div class="footer4-row">
-              <div class="footer4-container">
-                <span class="thq-body-small">© 2024 Vincent - Any Likeness to Any Brand is Purely Coincidental</span>
+  <!-- New Navigation Menu -->
+  <nav class="navbar8-desktop-menu">
+    <a href="index.html" class="navbar8-menu-item1">
+      <span class="home-text11">Priority Calculator</span>
+    </a>
+    <a href="repack.html" class="navbar8-menu-item2">
+      <span class="home-text12">Repack Calculator</span>
+    </a>
+  </nav>
+</header>
+            
+          </header>
+        </navbar8-wrapper>
+        <hero17-wrapper class="hero17-wrapper">
+          <!--Hero17 component-->
+          <div class="hero17-header78">
+            <div
+              class="hero17-column1 thq-section-padding thq-section-max-width"
+            >
+              <h1>
+                <fragment class="home-fragment26">
+                  <span class="home-text26 thq-heading-1">
+                    How Many Priorities Do I Need To Pull?
+                  </span>
+                </fragment>
+              </h1>
+              <div class="hero17-content1">
+                <p>
+                  <fragment class="home-fragment24">
+                    <span class="home-text24 thq-body-large">
+                      Enter the values in the input boxes below to get your
+                      calculated result.
+                    </span>
+                  </fragment>
+                </p>
               </div>
-              <div class="footer4-footer-links"></div>
+            </div>
+            <div class="hero17-container1">
+              <div class="hero17-container2">
+                <label>
+                  <fragment class="home-fragment19">
+                    <span class="home-text19">Enter Remaining Priorities:</span>
+                  </fragment>
+                </label>
+                <input
+                  type="number"
+                  id="Pr"
+                  name="Pr"
+                  placeholder="Priority"
+                  class="input"
+                />
+              </div>
+              <div class="hero17-container3">
+                <label>
+                  <fragment class="home-fragment20">
+                    <span class="home-text20">Enter Priorities Filled:</span>
+                  </fragment>
+                </label>
+                <input
+                  type="number"
+                  id="Pf"
+                  name="Pf"
+                  placeholder="Priorities Filled Today"
+                  class="input"
+                />
+              </div>
+              <div class="hero17-container4">
+                <label>
+                  <fragment class="home-fragment18">
+                    <span class="home-text18">Enter Priorities Target %:</span>
+                  </fragment>
+                </label>
+                <input
+                  type="text"
+                  id="Pp"
+                  name="Pp"
+                  value="0.75"
+                  placeholder="% Goal"
+                  class="input"
+                />
+              </div>
+            </div>
+            <button id="calc" type="button" onclick="calculateAndUpdate()" class="hero17-button button">
+              <span>
+                <fragment class="home-fragment21">
+                  <span class="home-text21">Calculate</span>
+                </fragment>
+              </span>
+            </button>
+            <div
+              class="hero17-column2 thq-section-padding thq-section-max-width"
+            >
+              <h1>
+                <fragment class="home-fragment23">
+                  <span class="home-text23 thq-heading-1">
+                    You Need To Pull:&nbsp;
+                  </span>
+                </fragment>
+              </h1>
+              <div class="hero17-content2">
+                <p id="Pn">
+                  <fragment class="home-fragment22">
+                    <span class="home-text22 thq-body-large">?</span>
+                  </fragment>
+                </p>
+              </div>
+              <p>
+                <fragment class="home-fragment25">
+                  <span class="home-text25 thq-body-large">Priorities!</span>
+                </fragment>
+              </p>
             </div>
           </div>
-        </div>
-      </footer>
+        </hero17-wrapper>
+        <footer4-wrapper class="footer4-wrapper">
+          <!--Footer4 component-->
+          <footer class="footer4-footer7 thq-section-padding">
+            <div class="footer4-max-width thq-section-max-width">
+              <div class="footer4-content">
+                <div class="footer4-logo1">
+                  <img
+                    alt="Company Logo"
+                    src="public/targit-1500h.png"
+                    class="footer4-logo2"
+                  />
+                </div>
+              </div>
+              <div class="footer4-credits">
+                <div class="thq-divider-horizontal"></div>
+                <div class="footer4-row">
+                  <div class="footer4-container">
+                    <span class="thq-body-small">© 2024 Vincent - Any Likeness to Any Brand is Purely Coincidental</span>
+                  </div>
+                  <div class="footer4-footer-links"></div>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </footer4-wrapper>
+      </div>
     </div>
+    <script
+      defer=""
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
   </body>
 </html>
